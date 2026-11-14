@@ -1,0 +1,12 @@
+[
+  {
+    "titel": "SPARTA Architectuur Demo",
+    "inhoud": "Scheiding tussen wat en hoe werkt geweldig.",
+    "userId": 1
+  },
+  {
+    "titel": "Playwright API Testing",
+    "inhoud": "Data-driven testen met JSON en TypeScript.",
+    "userId": 2
+  }
+]
