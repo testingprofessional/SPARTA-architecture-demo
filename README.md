@@ -22,6 +22,41 @@ De kern van SPARTA is een strikte scheiding tussen **wat** we testen (functionel
 │ 4. INTERACTIELAAG (interactie/)                                 │
 │    Hoe werkt het onder de motorkap? API Clients & Page Objects. │
 └─────────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart TD
+    subgraph L1["1. TESTLAAG (Wat wil je testen?)"]
+        T1["tests/posts.spec.ts & tests/shop.spec.ts<br/><i>Leesbare scenario's met keywords</i>"]
+        T2["data/posts.json & data/saucedemo.json<br/><i>Data-driven invoer</i>"]
+    end
+
+    subgraph L2["2. CONFIGURATIELAAG (Onder welke omstandigheden?)"]
+        C1["playwright.config.ts<br/><i>API & UI projecten, baseURLs, testIdAttribute</i>"]
+        C2["config/fixtures.ts<br/><i>Dependency injection & test-isolatie</i>"]
+    end
+
+    subgraph L3["3. ACT & ASSERT-LAAG (Wat kan de tester doen & controleren?)"]
+        A1["Invokers (PostActions / ShopActions)<br/><i>Functionele acties</i>"]
+        A2["Asserters (PostAssertions / ShopAssertions)<br/><i>Playwright expect() validaties</i>"]
+    end
+
+    subgraph L4["4. INTERACTIELAAG (Hoe werkt het onder de motorkap?)"]
+        I1["API Channel: PostApiClient.ts<br/><i>HTTP requests, response-parsing, 5xx foutafhandeling</i>"]
+        I2["UI Channel: LoginPage.ts & InventoryPage.ts<br/><i>Page Objects, locators & browser-acties</i>"]
+    end
+
+    L1 -->|"Gebruikt context & fixtures"| L2
+    L1 -->|"Roept keywords aan"| L3
+    A1 -->|"Voert actie uit via"| L4
+    A2 -->|"Haalt ruwe data op uit"| L4
+    I1 -.->|"REST API"| EXT1[("JSONPlaceholder API")]
+    I2 -.->|"Browser"| EXT2[("SauceDemo Webshop")]
+
+    style L1 fill:#1e40af,stroke:#1e3a8a,color:#ffffff
+    style L2 fill:#0f766e,stroke:#115e59,color:#ffffff
+    style L3 fill:#15803d,stroke:#14532d,color:#ffffff
+    style L4 fill:#374151,stroke:#1f2937,color:#ffffff
+```
+
 ```
 
 ### Overzicht van verantwoordelijkheden
