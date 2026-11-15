@@ -22,6 +22,11 @@ De kern van SPARTA is een strikte scheiding tussen **wat** we testen (functionel
 │ 4. INTERACTIELAAG (interactie/)                                 │
 │    Hoe werkt het onder de motorkap? API Clients & Page Objects. │
 └─────────────────────────────────────────────────────────────────┘
+• Test praat alleen tegen Act & Assert (en haalt data uit JSON).
+• Act & Assert praat alleen tegen Interactie.
+• Interactie praat alleen tegen de Website / API.
+• En Configuratie hangt daar als een paraplu boven om alles klaar te zetten voordat de test begint.
+
 
 ```
 ```mermaid
