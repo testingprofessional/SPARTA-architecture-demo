@@ -1,0 +1,11 @@
+{
+  "standaardGebruiker": {
+    "username": "standard_user",
+    "password": "secret_sauce"
+  },
+  "geblokkeerdeGebruiker": {
+    "username": "locked_out_user",
+    "password": "secret_sauce",
+    "verwachteFout": "Sorry, this user has been locked out."
+  }
+}
