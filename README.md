@@ -22,6 +22,8 @@ De kern van SPARTA is een strikte scheiding tussen **wat** we testen (functionel
 │ 4. INTERACTIELAAG (interactie/)                                 │
 │    Hoe werkt het onder de motorkap? API Clients & Page Objects. │
 └─────────────────────────────────────────────────────────────────┘
+
+```
 ```mermaid
 flowchart TD
     subgraph L1["1. TESTLAAG (Wat wil je testen?)"]
@@ -55,8 +57,6 @@ flowchart TD
     style L2 fill:#0f766e,stroke:#115e59,color:#ffffff
     style L3 fill:#15803d,stroke:#14532d,color:#ffffff
     style L4 fill:#374151,stroke:#1f2937,color:#ffffff
-```
-
 ```
 
 ### Overzicht van verantwoordelijkheden
